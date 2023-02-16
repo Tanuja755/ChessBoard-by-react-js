@@ -1,40 +1,66 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import "./index.css"; 
+import "./index.css";
 
+//How react Runs using Array
 
-var v=[1,2,3,4,5,6,7,8];
-var h=["a","b","c","d","e","f","g","h"];
+var row = [];
+var child = [];
+var box1 = [];
+var box2 = [];
 
-function App(){
-	
-	let board=[];
-	for(let j=v.length-1; j>=0;j--){
-	for(let i=0; i <h.length;i++){
-	var number=j +i+2;
-	if(number%2==0){
-		board.push(
-	<div className="white">
-	</div>
-	);
-	}
-   else{
-   board.push(
-   <div className="black">
-   </div>
-	);
-   }
-	}
-	}
-	return(
-	 <React.Fragment>
-	 <div id="p">CHESS BOARD</div>
-	 <div id="chessboard">{board}</div>
-	 </React.Fragment>
-	);
-
+for(let k=0;k<8;k++){
+	if(k%2==0){
+box1.push(<div className="box-even"></div>)		
+}else{
+	box1.push(<div className="box-odd"></div>)
+}
 
 }
+
+for(let k=0;k<8;k++){
+	if(k%2==0){
+box2.push(<div className="box-odd"></div>)		
+}else{
+	box2.push(<div className="box-even"></div>)
+}
+
+}
+
+
+for(let j=0;j<2;j++){
+child.push(<div className="row-child">{box1}{box2}</div>)		
+}
+
+
+for(let i=0;i<2;i++){
+console.log(i);
+row.push(<div className="row">{child}</div>)		
+}
+
+
+
+
+
 ReactDOM.render(
-App()
-,document.getElementById('root'));
+<React.Fragment>
+<h1>Chess Board</h1>
+<div id="outer">
+{row}
+</div>
+</React.Fragment>,
+document.getElementById('root'));
+
+
+
+
+
+
+
+
+
+
+
+
+
+

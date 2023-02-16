@@ -1,42 +1,41 @@
-
-#chessboard{
-
-height:800px;
-width:800px;
-display:grid;
-border:2px Solid black;
-grid-template-columns:repeat(8,100px);
-grid-template-rows:repeat(8,100px);
-margin:0px auto;
+*{
+	box-sizing:border-box;
 }
 
-#p{
-	text-align:center;
-	font-size:40px;
-	margin:0px auto;
-	text-shadow:0px,0px,12px,4px,aqua;
-	/* background:aqua; */
-	border:2px solid black;
-	height:60px;
+#outer{
+	height:800px;
 	width:800px;
-	border-radius:10px;
-	margin-bottom:50px;
+	border:1px solid black;
 }
 
-.title
-{
-	width:100px;
+.row{
+	border:1px solid black;
+	height:200px;
+	width:800px;
+}
+
+.row-child{
+	//border:1px solid green;
 	height:100px;
+	width:800px;
 }
 
-.black
-{
-	background:black;
+.box-even{
+	border:1px solid black;
+	height:100px;
+	width:100px;
+	background-color:black;
+	float:left;
 }
-.white
-{
-	background:white;
+
+.box-odd{
+	border:1px solid black;
+	height:100px;
+	width:100px;
+	background-color:white;
+	float:left;
 }
+
 
 
 
